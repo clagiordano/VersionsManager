@@ -1,0 +1,8 @@
+
+.released {
+    background-color: darkgreen;
+}
+
+.not-released {
+    background-color: darkblue;
+}
