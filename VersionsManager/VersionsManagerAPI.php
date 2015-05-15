@@ -36,12 +36,9 @@ function get_projects()
     ";
 
     $t_resource = db_query_bound($t_query);
-
     while ($row = db_fetch_array($t_resource)) {
         $t_results[] = $row;
     }
-
-    print_r($t_results);
 
     return $t_results;
 }
