@@ -19,4 +19,13 @@ class VersionsManagerPlugin extends MantisPlugin
         $this->contact = 'claudio.giordano@autistici.org';
         $this->url     = '';
     }
+
+    function config()
+    {
+        return [
+            'manage_versions' => MANAGER,
+            'view_versions' => REPORTER
+        ];
+    }
+
 }
