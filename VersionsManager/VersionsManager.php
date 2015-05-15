@@ -24,8 +24,13 @@ class VersionsManagerPlugin extends MantisPlugin
     {
         return [
             'manage_versions' => MANAGER,
-            'view_versions' => REPORTER
+            'view_versions'   => REPORTER
         ];
+    }
+
+    function init()
+    {
+        require_once( 'VersionsManagerAPI.php' );
     }
 
 }
