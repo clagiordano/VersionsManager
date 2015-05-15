@@ -9,15 +9,15 @@ function get_projects()
             auth_get_current_user_id(), true
     );
 
-    $t_query   = "
+    $t_query = "
         SELECT
             pt.name,
-            vt.version as version,
-            IF(vt.released, 'produzione', 'sviluppo') as version_status,
+            vt.version,
+            pt.status,
             vt.description,
             IF(vt.released, '" . lang_get('yes') . "', '" . lang_get('no') . "') AS released,
 
-            DATE_FORMAT(FROM_UNIXTIME(vt.date_order), '%d/%m/%Y') release_date
+            DATE_FORMAT(FROM_UNIXTIME(vt.date_order), '%d/%m/%Y') scheduled_release
         FROM
             mantis_project_version_table vt,
             mantis_project_table pt
@@ -34,14 +34,11 @@ function get_projects()
             vt.version
     ";
 
-    // $s_project_status_enum_string = '10:sviluppo,30:release,50:stabile,70:obsoleto';
-    echo "DEBUG: $t_query";
-    $t_results = db_query_bound($t_query);
+    $t_resource = db_query_bound($t_query);
 
-    while ($row = db_fetch_array($t_results)) {
-        ?>
-                <tr <?php echo helper_alternate_class() ?>>
-            <?php
-        }
+    while ($row = db_fetch_array($t_resource)) {
+        $t_results[] = $row;
     }
-    
+
+    return $t_resource;
+}

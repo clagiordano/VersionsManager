@@ -38,11 +38,30 @@ get_projects();
         </td>
     </tr>
 
-    <?php foreach ($array as $value) { ?>
-
-    <?php } ?>
+    <?php foreach (get_projects() as $project) { ?>
+        <tr <?php echo helper_alternate_class() ?>>
+            <td>
+                <?php echo string_display($project['name']); ?>
+            </td>
+            <td>
+                <?php echo string_display($project['version']); ?>
+            </td>
+            <td>
+                <?php echo get_enum_element('project_status', $project['status']); ?>
+            </td>
+            <td>
+                <?php echo string_display($project['description']); ?>
+            </td>
+            <td>
+                <?php echo string_display($project['released']); ?>
+            </td>
+            <td>
+                <?php echo string_display($project['scheduled_release']); ?>
+            </td>
+        </tr>
+<?php } ?>
 </table>
-<?php
-    html_page_bottom();
 
-    
+<?php
+html_page_bottom();
+
