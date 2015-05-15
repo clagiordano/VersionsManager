@@ -15,7 +15,8 @@ function get_projects()
             vt.version,
             pt.status,
             vt.description,
-            IF(vt.released, '" . lang_get('yes') . "', '" . lang_get('no') . "') AS released,
+            vt.released AS released_bool,
+            IF (vt.released, '" . lang_get('yes') . "', '" . lang_get('no') . "') AS released,
 
             DATE_FORMAT(FROM_UNIXTIME(vt.date_order), '%d/%m/%Y') scheduled_release
         FROM
@@ -40,5 +41,7 @@ function get_projects()
         $t_results[] = $row;
     }
 
-    return $t_resource;
+    print_r($t_results);
+
+    return $t_results;
 }
