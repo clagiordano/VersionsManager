@@ -7,7 +7,7 @@ class VersionsManagerPlugin extends MantisPlugin
     {
         $this->name        = 'Versions Manager';
         $this->description = 'Advanced versions management plugin';
-        $this->page        = 'config_page';
+        $this->page        = '';
 
         $this->version = '1.0';
 
