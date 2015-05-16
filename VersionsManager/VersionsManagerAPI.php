@@ -17,7 +17,7 @@ function get_projects()
             vt.description,
             vt.released AS released_bool,
             IF (vt.released, '" . lang_get('yes') . "', '" . lang_get('no') . "') AS released,
-            DATE_FORMAT(FROM_UNIXTIME(vt.date_order), '%d/%m/%Y') AS scheduled_release
+            DATE_FORMAT(FROM_UNIXTIME(vt.date_order), '%\d/%m/%Y') AS scheduled_release
         FROM
             mantis_project_version_table vt,
             mantis_project_table pt
@@ -35,7 +35,7 @@ function get_projects()
     ";
 
     $t_resource = db_query_bound($t_query);
-    while ($row = db_fetch_array($t_resource)) {
+    while ($row        = db_fetch_array($t_resource)) {
         $t_results[] = $row;
     }
 
