@@ -4,33 +4,32 @@ access_ensure_global_level(plugin_config_get('view_versions'));
 
 html_page_top();
 
-
 echo '<br /><span class="pagetitle">', string_display(lang_get('projects_title')), '</span><br />';
 ?>
 
 <link rel='stylesheet' type="text/css" href="<?php echo plugin_file('style.css'); ?>" />
 
 <br />
-<table class="width100" cellspacing="1">
+<table class="width100 version-table" cellspacing="1">
     <tr class="row-category">
-        <td width="10%">
+        <th width="10%">
             <?php echo lang_get('name'); ?>
-        </td>
-        <td width="10%">
+        </th>
+        <th width="10%">
             <?php echo lang_get('version'); ?>
-        </td>
-        <td width="15%">
+        </th>
+        <th width="15%">
             <?php echo lang_get('status'); ?>
-        </td>
-        <td width="30%">
+        </th>
+        <th width="30%">
             <?php echo lang_get('description'); ?>
-        </td>
-        <td width="5%">
+        </th>
+        <th width="5%">
             <?php echo lang_get('released'); ?>
-        </td>
-        <td width="10%">
+        </th>
+        <th width="10%">
             <?php echo lang_get('scheduled_release'); ?>
-        </td>
+        </th>
     </tr>
 
     <?php
@@ -42,7 +41,7 @@ echo '<br /><span class="pagetitle">', string_display(lang_get('projects_title')
             }
         ?>
 
-        <tr <?php echo helper_alternate_class() ?>>
+        <tr <?php echo helper_alternate_class(); ?>>
             <td>
                 <?php echo string_display($project['name']); ?>
             </td>
