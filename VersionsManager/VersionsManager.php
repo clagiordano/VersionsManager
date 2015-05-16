@@ -12,7 +12,7 @@ class VersionsManagerPlugin extends MantisPlugin
         $this->version = '1.0';
 
         $this->requires = [
-            'MantisCore' => '1.2.0',
+            'MantisCore' => '1.2, <= 1.3.0-beta.1',
         ];
 
         $this->author  = 'Claudio Giordano';
