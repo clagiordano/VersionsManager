@@ -49,6 +49,7 @@ class VersionsManagerPlugin extends MantisPlugin
         $hooks = [
             'EVENT_MENU_MAIN' => 'menu_main'
         ];
+        
         return $hooks;
     }
 
