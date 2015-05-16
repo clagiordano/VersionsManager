@@ -9,7 +9,7 @@ class VersionsManagerPlugin extends MantisPlugin
         $this->description = 'Advanced versions management plugin';
         $this->page        = 'config_page';
 
-        $this->version = '0.1';
+        $this->version = '1.0';
 
         $this->requires = [
             'MantisCore' => '1.2.0',
