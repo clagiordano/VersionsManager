@@ -33,4 +33,23 @@ class VersionsManagerPlugin extends MantisPlugin
         require_once( 'VersionsManagerAPI.php' );
     }
 
+    function menu_main()
+    {
+        $t_links = array();
+
+        $t_page    = plugin_page('view');
+        $t_lang    = lang_get('view_revisions');
+        $t_links[] = "<a href=\"$t_page\">$t_lang</a>";
+
+        return $t_links;
+    }
+
+    function hooks()
+    {
+        $hooks = [
+            'EVENT_MENU_MAIN' => 'menu_main'
+        ];
+        return $hooks;
+    }
+
 }
