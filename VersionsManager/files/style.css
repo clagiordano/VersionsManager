@@ -1,12 +1,10 @@
 
 .released {
-    background-color: darkgreen;
-    color: white;
+    background-color: #d2f5b0;
 }
 
 .not-released {
-    background-color: darkblue;
-    color: white;
+    background-color: #c2dfff;
 }
 
 .version-table tr:hover > td {
