@@ -2,7 +2,6 @@
 access_ensure_global_level(plugin_config_get('view_versions'));
 
 html_page_top();
-
 ?>
 
 <link rel='stylesheet' type="text/css" href="<?php echo plugin_file('style.css'); ?>" />
@@ -45,8 +44,9 @@ html_page_top();
                 </td>
                 <td class="center">
                     <?php
-                        print_link( 'manage_proj_ver_edit_page.php?version_id=' . $project['version_id'],
-                            string_display($project['version'])); ?>
+                    print_link('manage_proj_ver_edit_page.php?version_id=' . $project['version_id'],
+                               string_display($project['version']));
+                    ?>
                 </td>
                 <td class="center">
                     <?php
