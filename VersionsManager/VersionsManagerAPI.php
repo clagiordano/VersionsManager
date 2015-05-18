@@ -11,6 +11,8 @@ function get_projects()
 
     $t_query = "
         SELECT
+            pt.id AS project_id,
+            vt.id AS version_id,
             pt.name,
             vt.version,
             pt.status,
