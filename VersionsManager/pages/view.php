@@ -24,7 +24,7 @@ html_page_top();
             <th>
                 <?php echo lang_get('released'); ?>
             </th>
-            <th>
+            <th colspan="2">
                 <?php echo lang_get('scheduled_release'); ?>
             </th>
         </tr>
@@ -43,7 +43,9 @@ html_page_top();
                     <?php echo string_display($project['name']); ?>
                 </td>
                 <td class="center">
-                    <?php echo string_display($project['version']); ?>
+                    <?php
+                        print_link( 'manage_proj_ver_edit_page.php?version_id=' . $project['version_id'],
+                            string_display($project['version'])); ?>
                 </td>
                 <td class="center">
                     <?php
@@ -58,6 +60,13 @@ html_page_top();
                 </td>
                 <td class="center">
                     <?php echo string_display($project['scheduled_release']); ?>
+                </td>
+                <td class="center">
+                    <a href="manage_proj_ver_delete.php?version_id=<?php echo $project['version_id']; ?>"
+                        <img src="images/delete.png" class="delete-icon"
+                            title="<?php echo lang_get( 'delete_link' ); ?>" alt="X" />
+                        asfasf
+                    </a>
                 </td>
             </tr>
         <?php } ?>
