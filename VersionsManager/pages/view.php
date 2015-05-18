@@ -2,6 +2,7 @@
 access_ensure_global_level(plugin_config_get('view_versions'));
 
 html_page_top();
+
 ?>
 
 <link rel='stylesheet' type="text/css" href="<?php echo plugin_file('style.css'); ?>" />
@@ -24,7 +25,7 @@ html_page_top();
             <th>
                 <?php echo lang_get('released'); ?>
             </th>
-            <th colspan="2">
+            <th>
                 <?php echo lang_get('scheduled_release'); ?>
             </th>
         </tr>
@@ -60,13 +61,6 @@ html_page_top();
                 </td>
                 <td class="center">
                     <?php echo string_display($project['scheduled_release']); ?>
-                </td>
-                <td class="center">
-                    <a href="manage_proj_ver_delete.php?version_id=<?php echo $project['version_id']; ?>"
-                        <img src="images/delete.png" class="delete-icon"
-                            title="<?php echo lang_get( 'delete_link' ); ?>" alt="X" />
-                        asfasf
-                    </a>
                 </td>
             </tr>
         <?php } ?>
